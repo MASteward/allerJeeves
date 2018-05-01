@@ -222,27 +222,6 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 		background-color: #fff;
 	}
 
-	/* .add-to-favorites:focus {
-		outline: none;
-	}
-
-	.fas.fa-star {
-		font-weight: 400;
-		color: gray;
-	}
-
-	.fas.fa-star:hover {
-		color: gold;
-		font-weight: 900;
-		cursor: pointer;
-	}
-
-	.fas.fa-star.filled {
-	  color: gold;
-		font-weight: 900;
-	}
-} */
-
 @media screen and (min-width: 768px) {
 	.submitRecipe {
 	  margin-left: 0;
@@ -274,5 +253,7 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 
 	#currentName {
 		display: inline-block;
+		font-size: 20px;
+		text-shadow: 1px 1.5px #DDD;
 	}
 }

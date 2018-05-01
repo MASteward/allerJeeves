@@ -312,10 +312,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
 // ================ INITIATE FAVORITES MODAL ================
 
   $(".favorite-area").on("click", ".card", function(){
@@ -367,7 +363,7 @@ $(document).ready(function(){
   // var lastName = ;
   // var emailSignup = ;
   // var passwordSignup = ;
-  var confirm = $("input#password-confirm");
+  // var confirm = $("input#password-confirm");
 
   // When the signup button is clicked, we validate the email and password are not blank
   $("form.signup").on("submit", function(event) {
@@ -376,10 +372,12 @@ $(document).ready(function(){
       firstName: $("input#firstName").val().trim(),
       lastName: $("input#lastName").val().trim(),
       email: $("input#email-signup").val().trim(),
-      password: $("input#password-signup").val().trim()
+      password: $("input#password-signup").val().trim(),
+      confirm: $("input#password-confirm").val().trim()
     };
 
-    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password || userData.password == confirm) {
+    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password || userData.password !== userData.confirm) {
+      console.log("returned this");
       return;
     } else {
       signUpUser(userData);
@@ -389,18 +387,21 @@ $(document).ready(function(){
 
   // Does a post to the signup route. If succesful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(userData) {
+  function signUpUser(userInfo) {
     $.post("/api/signup", {
-      firstName: userData.firstName,
-      lastName: userData.lastName,
-      email: userData.email,
-      password: userData.password
+      firstName: userInfo.firstName,
+      lastName: userInfo.lastName,
+      email: userInfo.email,
+      password: userInfo.password
     }).then(function(data) {
-      // window.location.replace(data);
+      window.location.reload();
       console.log("signed up");
-      // If there's an error, handle it by throwing up a boostrap alert
-    })
-    checkStatus();
+    }).catch(handleLoginErr);
+  };
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   };
 
 });

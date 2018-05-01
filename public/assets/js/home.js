@@ -157,22 +157,26 @@ $(document).ready(function(){
   // var lastName = ;
   // var emailSignup = ;
   // var passwordSignup = ;
-  var confirm = $("input#password-confirm");
+  // var confirm = $("input#password-confirm");
 
   // When the signup button is clicked, we validate the email and password are not blank
   $("form.signup").on("submit", function(event) {
+    console.log("signup motherf*ck");
     event.preventDefault();
     var userData = {
       firstName: $("input#firstName").val().trim(),
       lastName: $("input#lastName").val().trim(),
       email: $("input#email-signup").val().trim(),
-      password: $("input#password-signup").val().trim()
+      password: $("input#password-signup").val().trim(),
+      confirm: $("input#password-confirm").val().trim()
     };
-    console.log("USERDATA", userData);
+    console.log(userData.confirm);
 
-    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password || userData.password == confirm) {
+    if (!userData.firstName || !userData.lastName || !userData.email || !userData.password || userData.password !== userData.confirm) {
+      console.log("return this");
       return;
     } else {
+      console.log("signupUser");
       signUpUser(userData);
     }
   });
@@ -180,15 +184,15 @@ $(document).ready(function(){
 
 // Does a post to the signup route. If succesful, we are redirected to the members page
 // Otherwise we log any errors
-  function signUpUser(email, password) {
+  function signUpUser(userInfo) {
     $.post("/api/signup", {
-      firstName: userData.firstName,
-      lastName: userData.lastName,
-      email: email,
-      password: password
+      firstName: userInfo.firstName,
+      lastName: userInfo.lastName,
+      email: userInfo.email,
+      password: userInfo.password
     }).then(function(data) {
-      window.location.replace(data);
-      // If there's an error, handle it by throwing up a boostrap alert
+      window.location.reload();
+      console.log("signed up");
     }).catch(handleLoginErr);
   };
 

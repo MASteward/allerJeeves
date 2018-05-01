@@ -109,6 +109,16 @@ body {
 	background-color: #3345ab;
 }
 
+#currentName {
+	color: #fff;
+	text-shadow: 1px 1.5px #CB4E61;
+}
+
+
+
+ /* ========== MEDIA QUERIES ========== */ 
+
+
 @media screen and (max-width: 576px) {
 	.space {
 		display: none;
@@ -138,6 +148,10 @@ body {
 @media screen and (min-width: 992px) {
 	.columnOne {
 		padding-left: 95px;
+	}
+	#currentName {
+		display: inline-block;
+		font-size: 20px;
 	}
 }
 
