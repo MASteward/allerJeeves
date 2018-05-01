@@ -1,0 +1,152 @@
+/*--------Color Palette---------*/
+/*dirty martini: #7F7F40*/
+/*You Zen Me: #C3D2A2*/
+/*inside banana: #FEFBE0*/
+/*coffee-4: #CFB7A1*/
+/*strawberry sangrita: #CB4E61*/
+
+/*----------FONTS-----------
+font-family: 'Catamaran', sans-serif; (not for headers)
+font-family: 'Berkshire Swash', cursive; (for headers)
+font-family: "Great Vibes", cursive; */
+
+
+/*index.html================================*/
+body {
+	background: url("../images/foodGroup.jpg");
+	color: #CB4E61;
+	font-family: 'Catamaran', sans-serif;
+}
+
+.navbar-right{
+	position:absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.container {
+	padding: 50px;
+}
+
+#titlebar,
+#findRecipe,
+.restrictions {
+	border-radius: 5px;
+}
+
+/* ================ TITLE =================== */
+
+#titlebar {
+	background-color: #fff;
+	/* border-radius: 5px; */
+	font-family: "Great Vibes", cursive;
+	color: #4453ab;
+	font-style: italic;
+	font-weight: 600;
+}
+
+#title{
+	text-align: center;
+	font-size: 4.5rem;
+	width: auto;
+	/* margin: 35px auto 30px; */
+	/* line-height: .63; */
+	text-shadow:
+		1px 1px .5px #fff,
+		-1px 1px .5px #fff,
+		1px -1px .5px #fff;
+}
+
+#j {
+	position: relative;
+	right: 32px;
+	top: 6px;
+	z-index: 100;
+}
+
+#eeves {
+	position: relative;
+	right: 29px;
+}
+
+#title-line {
+  display: block;
+  position: relative;
+  bottom: 30px;
+  right: 10px;
+  max-width: 270px;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid #CB4E61;
+  margin: 1px auto;
+  padding: 0;
+}
+
+#findRecipe {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 20px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.restrictions {
+	background-color: rgba(255, 255, 255, 0.9);
+	margin-top: 10px;
+	padding: 20px;
+}
+
+.allergyTitle {
+	text-align: center;
+}
+
+.btn {
+	background-color: #CB4E61;
+	color: #fff;
+	border-color: #3345ab;
+}
+
+.btn:hover {
+	background-color: #3345ab;
+}
+
+@media screen and (max-width: 576px) {
+	.space {
+		display: none;
+	}
+	#title {
+		font-size: 3.8rem;
+	}
+	hr {
+		bottom: 26px;
+	}
+	.recipe-search-title {
+		font-size: 1.2em;
+	}
+	#inputBtn,
+	.btn {
+		font-size: 14px;
+		width: 60px;
+		height: 30px;
+		padding: 4px;
+	}
+
+	#foodSearch {
+		width: 65%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.columnOne {
+		padding-left: 95px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.introBody {
+		max-width: 1024px;
+	}
+	.mainSearch {
+		min-width: 32%;
+	}
+
+}

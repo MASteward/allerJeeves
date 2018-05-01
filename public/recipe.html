@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Allerjeeves</title>
+
+  										<!--RESET-->
+  	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  									<!--BOOTSTRAP-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  								<!-- GOOGLE FONTS -->
+  	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Catamaran|Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <a class="navbar-brand" href="/index.html">
+        <div class="navTitle">
+          <h1 id="title">Aller- <span id="j">J</span><span id="eeves">eeves</span></h1>
+          <hr id="title-line">
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fav-link" data-toggle='modal' href="#favoritesModal">Favorites</a>
+          </li>
+
+                    <!-- DROPDOWN MENU -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restrictions
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <fieldset id="restrictions">
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="dairy" name="interest" value="396^Dairy-Free">
+                  <label class="restrictionLabel" for="dairy">Dairy-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="gluten" name="interest" value="393^Gluten-Free">
+                  <label class="restrictionLabel" for="gluten">Gluten-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="peanuts" name="interest" value="394^Peanut-Free">
+                  <label class="restrictionLabel" for="peanuts">Peanut-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="diet" type="checkbox" id="veggie" name="interest" value="387^Lacto-ovo vegetarian">
+                  <label class="restrictionLabel" for="veggie">Vegetarian</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="diet" type="checkbox" id="vegan" name="interest" value="386^Vegan">
+                  <label class="restrictionLabel" for="vegan">Vegan</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="soy" name="interest" value="400^Soy-Free">
+                  <label class="restrictionLabel" for="soy">Soy-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="egg" name="interest" value="397^Egg-Free">
+                  <label class="restrictionLabel" for="egg">Egg-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="allergy" type="checkbox" id="sulfite" name="interest" value="401^Sulfite-Free">
+                  <label class="restrictionLabel" for="sulfite">Sulfite-Free</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="diet" type="checkbox" id="pescetarian" name="interest" value="390^Pescetarian">
+                  <label class="restrictionLabel" for="pescetarian">Pescetarian</label>
+                </div>
+                <div class="dropdown-item">
+                  <input class="diet" type="checkbox" id="paleo" name="interest" value="403^Paleo">
+                  <label class="restrictionLabel" for="paleo">Paleo</label>
+                </div>
+              </fieldset>
+            </div>
+          </li>
+          <li>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" id="recipeSearch" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0 submitRecipe" id="subBtn" type="submit">Search</button>
+            </form>
+          </li>
+        </ul>
+        <div class="navbar-right">
+          <h6 id="currentName"></h6>
+          <span id="sign-in-status">
+            <button class="btn my-2 my-sm-0" id="loginBtn" data-toggle="modal" data-target="#login-modal">Sign In</button>
+            <a class="btn my-2 my-sm-0" id="signOut" href="/logout" role="button">Sign Out</a>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" id="mainBody">
+      <div class="row justify-content-center outputArea">
+
+      </div>
+    </div>
+
+
+    <!-- ============  LOGIN MODAL ============== -->
+
+  	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  		<div class="modal-dialog" role="document">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<h5 class="modal-title" id="login-label">Login to Save Recipes!</h5>
+  					<button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+  						<span aria-hidden="true">&times;</span>
+  					</button>
+  				</div>
+  				<div class="modal-body">
+  					<div class="row">
+  						<div class="col-12">
+  							<h2>Login</h2>
+  							<form action="/api/login" method="post" class="login">
+  								<div class="form-group">
+  									<label for="inputEmail">Email Address:</label>
+  									<input type="email" name="email" class="form-control" id="email-login" placeholder="Email">
+  								</div>
+  								<div class="form-group">
+  									<label for="inputPassword">Password:</label>
+  									<input type="password" name="password" class="form-control" id="password-login" placeholder="Password">
+  								</div>
+  								<button type="submit" class="btn btn-default">Login</button>
+  							</form>
+  						</div>
+  					</div>
+  					<div class="row">
+  						<div class="col-md-12">
+  							<div class="modal-footer">
+  								<p>Not a member yet?</p>
+  								<button class="btn my-2 my-sm-0" data-dismiss="modal" id="SignInBtn" data-toggle="modal" data-target="#sign-in-modal">Sign Up!</button>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+
+  <!-- ============  REGISTRATION MODAL ============== -->
+
+  	<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  		<div class="modal-dialog" role="document">
+  			<div class="modal-content">
+  				<div class="modal-header">
+  					<h5 class="modal-title" id="sign-in-label">Sign Up to Save Recipes!</h5>
+  					<button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+  						<span aria-hidden="true">&times;</span>
+  					</button>
+  				</div>
+  				<div class="modal-body">
+  					<div class="row">
+  						<div class="col-12">
+  							<h2>Registration</h2>
+  							<form class="signup">
+  								<div class="form-group">
+  									<label for="firstName">First Name:</label>
+  									<input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
+  								</div>
+  								<div class="form-group">
+  									<label for="lastName">Last Name:</label>
+  									<input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+  								</div>
+  								<div class="form-group">
+  									<label for="inputEmail">Email Address:</label>
+  									<input type="email" name="email" class="form-control" id="email-signup" placeholder="Email">
+  								</div>
+  								<div class="form-group">
+  									<label for="inputPassword">Password:</label>
+  									<input type="password" name=password class="form-control" id="password-signup" placeholder="Password">
+  								</div>
+  								<div class="form-group">
+  									<label for="confirmPassword">Confirm Password:</label>
+  									<input type="password" name="confirmPassword" class="form-control" id="password-confirm" placeholder="Retype Password">
+  								</div>
+  							</form>
+  							<button type="submit" class="btn btn-default">Register</button>
+  						</div>
+  					</div>
+  					<div class="row">
+  						<div class="col-md-12">
+  							<div class="modal-footer">
+  								<p>Already a member </p>
+  								<button class="btn my-2 my-sm-0" data-dismiss="modal" id="loginBtn" data-toggle="modal" data-target="#login-modal">Login</button>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+
+
+    <!-- ============  RECIPE MODAL ============== -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="modal-dialog" role="document">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="modal-content">
+                  <div class="row modal-header">
+                    <div class="col-11">
+                      <h5 class="modal-title" data-number=""></h5>
+                    </div>
+                    <div class="col-1">
+                      <button type="button" role="button" class="add-to-favorites"></button>
+                    </div>
+                  </div>
+                  <div class="row modal-body">
+                    <div class="col-12 col-md-6 img-container">
+                      <img src="#" class="modal-img">
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="row">
+                        <div class="col-md-12 modal-recipe">
+                          <h6 class="modal-totalTime"></h6>
+                          <h6 class="modal-cookTime"></h6>
+                          <h6 class="modal-servings"></h6>
+                        </div>
+                      </div>
+                      <div class="row modal-ingredients">
+                        <div class="col-md-12">
+                          <h5 class=ingredientsTitle>Ingredients</h5>
+                          <ul class="ingredients-list"></ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="modal-divider">
+                  <div class="row recipe-footer footer-modal justify-content-between">
+                    <div class="col-6 removeButton">
+                      &nbsp;
+                    </div>
+                    <div class="col-6">
+                      <div class="row justify-content-end exit-instructions">
+                        <a class="btn btn-outline-secondary modal-instructions" role="button" aria-pressed="true" target="_blank"
+                        href="#">Instructions</a>
+                        <button class="btn btn-outline-secondary exit recipe-close" data-dismiss="modal" aria-label="Close">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============  FAVORITES MODAL ============== -->
+
+    <div class="modal fade" id="favoritesModal" tabindex="-1" role="dialog" aria-labelledby="favoritesModal" aria-hidden="true">
+      <div class="modal-favs modal-dialog" role="document">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="modal-content">
+              <div class="row modal-header">
+                <div class="col-md-12">
+                  <h5 class="modal-favorites-title">Favorites</h5>
+                </div>
+              </div>
+              <div class="row modal-body">
+                <div class="col-md-12 favorite-area"></div>
+              </div>
+              <div class="row fav-footer footer-modal justify-content-end">
+                <div class="fav-modal-buttons">
+                    <button class="btn btn-outline-secondary exit" data-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  	<!--_______________________jQuery___________________________-->
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/recipeJS.js"></script>
+  </body>
+</html>

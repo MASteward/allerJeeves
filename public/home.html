@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Allerjeeves</title>
+
+										<!--RESET-->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+									<!--BOOTSTRAP-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+								<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Catamaran|Berkshire+Swash|Great+Vibes" rel="stylesheet">
+<!--_______________________CSS______________________________-->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<!--____________________Font Awesome________________________-->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+</head>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-md navbar-light">
+			<a class="navbar-brand" href="/home.html"></a>
+			<div class="navbar-right justify-content-right">
+				<h6 id="currentName"></h6>
+				<span id="sign-in-status">
+					<button class="btn my-2 my-sm-0" id="loginBtn" data-toggle="modal" data-target="#login-modal">Sign In</button>
+					<a class="btn my-2 my-sm-0" id="signOut" href="/logout" role="button">Sign Out</a>
+				</span>
+			</div>
+		</nav>
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 introBody">
+
+				<div class="row" id="titlebar">
+					<!-- <hr> -->
+			    <div class="col-md-12 titleLetters">
+		        <h1 id="title" style="opacity: 1;">Aller-<span id="j">J</span><span id="eeves">eeves</span></h1>
+						<hr id="title-line">
+			    </div>
+				</div>
+
+				<div class="row" id="findRecipe">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="recipe-search-title">Can I help you find a recipe?</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 search-area">
+								<input type="text" id="foodSearch" class="mainSearch" name="search" placeholder="I'll be having...">
+								<button class="btn btn-outline-secondary initSub"  id="inputBtn" type="submit" href="/recipes">Search</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row restrictions">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-12 allergyTitle">
+								<h4>Do you have any dietary restrictions?</h4>
+							</div>
+						</div>
+						<fieldset class="foodOptions">
+							<div class="row justify-content-center">
+								<div class="col-6">
+									<div class="row">
+
+										<div class="col-12 col-md-6 columnOne">
+											<div class="set1">
+												<input class="allergy" type="checkbox" id="dairy" name="interest" value="396^Dairy-Free">
+												<label for="dairy">Dairy-Free</label>
+											</div>
+											<div class="set1">
+												<input class="allergy" type="checkbox" id="gluten" name="interest" value="393^Gluten-Free">
+												<label for="gluten">Gluten-Free</label>
+											</div>
+											<div class="set1">
+												<input class="allergy" type="checkbox" id="peanuts" name="interest" value="394^Peanut-Free">
+												<label for="peanuts">Peanut-Free</label>
+											</div>
+											<div class="set1">
+												<input class="diet" type="checkbox" id="veggie" name="interest" value="387^Lacto-ovo vegetarian">
+												<label for="veggie">Vegetarian</label>
+											</div>
+											<div class="set1">
+												<input class="diet" type="checkbox" id="vegan" name="interest" value="386^Vegan">
+												<label for="vegan">Vegan</label>
+											</div>
+										</div>
+
+										<div class="col-12 col-md-5 offset-md-1">
+											<div class="set2">
+												<input class="allergy" type="checkbox" id="egg" name="interest" value="397^Egg-Free">
+												<label for="egg">Egg-Free</label>
+											</div>
+											<div class="set2">
+												<input class="allergy" type="checkbox" id="sulfite" name="interest" value="401^Sulfite-Free">
+												<label for="sulfite">Sulfite-Free</label>
+											</div>
+											<div class="set2">
+												<input class="allergy" type="checkbox" id="soy" name="interest" value="400^Soy-Free">
+												<label for="soy">Soy-Free</label>
+											</div>
+											<div class="set2">
+												<input class="diet" type="checkbox" id="pescetarian" name="interest" value="390^Pescetarian">
+												<label for="pescetarian">Pescetarian</label>
+											</div>
+											<div class="set2">
+												<input class="diet" type="checkbox" id="paleo" name="interest" value="403^Paleo">
+												<label for="paleo">Paleo</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- ============  LOGIN MODAL ============== -->
+
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="login-label">Login to Save Recipes!</h5>
+					<button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12">
+							<h2>Login</h2>
+							<form action="/api/login" method="post" class="login">
+								<div class="form-group">
+									<label for="inputEmail">Email Address:</label>
+									<input type="email" name="email" class="form-control" id="email-login" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label for="inputPassword">Password:</label>
+									<input type="password" name="password" class="form-control" id="password-login" placeholder="Password">
+								</div>
+								<button type="submit" class="btn btn-default">Login</button>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="modal-footer">
+								<p>Not a member yet </p>
+								<button class="btn my-2 my-sm-0" data-dismiss="modal" id="SignInBtn" data-toggle="modal" data-target="#sign-in-modal">Sign Up!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- ============  REGISTRATION MODAL ============== -->
+
+	<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="sign-in-label">Sign Up to Save Recipes!</h5>
+					<button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12">
+							<h2>Registration</h2>
+							<form class="signup">
+								<div class="form-group">
+									<label for="firstName">First Name:</label>
+									<input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name">
+								</div>
+								<div class="form-group">
+									<label for="lastName">Last Name:</label>
+									<input type="text" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
+								</div>
+								<div class="form-group">
+									<label for="inputEmail">Email Address:</label>
+									<input type="email" name="email" class="form-control" id="email-signup" placeholder="Email">
+								</div>
+								<div class="form-group">
+									<label for="inputPassword">Password:</label>
+									<input type="password" name=password class="form-control" id="password-signup" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<label for="confirmPassword">Confirm Password:</label>
+									<input type="password" name="confirmPassword" class="form-control" id="password-confirm" placeholder="Retype Password">
+								</div>
+							</form>
+							<button type="submit" class="btn btn-default">Register</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="modal-footer">
+								<p>Already a member </p>
+								<button class="btn my-2 my-sm-0" data-dismiss="modal" id="loginBtn" data-toggle="modal" data-target="#login-modal">Login</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--_______________________Bootstrap jQuery_________________-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!--_______________________jQuery___________________________-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--_______________________javaScript_______________________-->
+	<script type="text/javascript" src="assets/js/home.js"></script>
+
+</body>
+</html>

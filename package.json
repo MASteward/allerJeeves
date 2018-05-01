@@ -1,0 +1,31 @@
+{
+  "name": "allerjeeves",
+  "version": "1.0.0",
+  "description": "recipe search web api app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Matthew Steward",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MASteward/allerJeeves.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MASteward/allerJeeves/issues"
+  },
+  "homepage": "https://github.com/MASteward/allerJeeves#readme"
+}

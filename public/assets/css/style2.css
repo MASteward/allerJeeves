@@ -1,0 +1,278 @@
+body {
+	background: url("../images/foodGroup.jpg");
+	color: #CB4E61;
+	font-family: 'Catamaran', sans-serif;
+}
+
+/* ===== NAVIGATION BAR ====== */
+.navbar {
+  padding-top: 1em;
+}
+
+/* ===== NAVIGATION LOGO ====== */
+.navTitle {
+	font-family: "Great Vibes", cursive;
+	color: #4453ab;
+	font-style: italic;
+}
+
+#title{
+	text-align: center;
+	width: auto;
+	text-shadow:
+		1px 1px .5px #fff,
+		-1px 1px .5px #fff,
+		1px -1px .5px #fff;
+}
+
+#j {
+	position: relative;
+	right: 32px;
+	top: 6px;
+	z-index: 100;
+}
+
+#eeves {
+	position: relative;
+	right: 29px;
+}
+
+#title-line {
+  display: block;
+  position: relative;
+  bottom: 1em;
+  right: .5em;
+  width: 90%;
+  height: 1px;
+  border-top: 2px solid #CB4E61;
+  margin: 1px auto;
+  padding: 0;
+}
+
+
+
+/* ===== MAIN CONTAINER ====== */
+#mainBody {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* ===== CARD AREA ====== */
+.outputArea {
+	text-align: center;
+}
+
+/* ========= CARDS =========== */
+
+.card {
+	display: inline-block;
+	max-width: 17em;
+	margin: 5px;
+}
+
+.card-title {
+	height: 50px;
+	overflow: hidden;
+	text-align: center;
+}
+
+
+ /* ========= MODAL ========= */
+
+.modal-header {
+	margin: 3px 0;
+	font-weight: bold;
+}
+
+.img-container {
+	text-align: center;
+	max-width: 100%;
+}
+
+.cookTimeTitle,
+.ingredientsTitle {
+	text-decoration: underline;
+	font-weight: bold;
+	color: #4453ab;
+}
+
+.modal-img {
+	width: 100%;
+}
+
+.ingredients-list {
+	text-transform: capitalize;
+}
+
+.modal-body {
+	flex-wrap: nowrap;
+	width: 100%;
+}
+
+.modal-ingredients {
+	width: 100%;
+}
+
+#myModal {
+	z-index: 1600;
+}
+
+.modal-divider {
+	border: .05em solid #CB4E61;
+	width: 99.9%;
+	margin-bottom: 0;
+}
+
+.footer-modal {
+	margin: 10px auto;
+	width: 100%;
+}
+
+.exit-instructions,
+.fav-modal-buttons {
+	padding-right: 15px;
+}
+
+.modal-instructions {
+	margin-right: 10px;
+}
+
+
+
+
+/* ======== BUTTONS ========== */
+
+/* NAVIGATION BUTTON */
+.submitRecipe {
+  margin-left: 20px;
+  margin-right: 10px;
+  background-color: #CB4E61;
+  color: #fff;
+  border-color: #CB4E61;
+}
+
+.submitRecipe:hover {
+	background-color: #4453ab;
+	border-color: #4453ab;
+}
+
+.btn {
+	background-color: #CB4E61;
+	color: #fff;
+	border-color: #3345ab;
+}
+
+.btn:hover {
+	background-color: #3345ab;
+}
+
+/* a.btn.btn-primary.btn-lg.modal-instructions {
+	background-color: #CB4E61;
+}
+
+a.btn.btn-primary.btn-lg.modal-instructions:hover {
+	background-color: #4453ab;
+	border-color: #4453ab;
+} */
+
+.add-to-favorites {
+	border: none;
+}
+
+.add-to-favorites:focus {
+	outline: none;
+}
+
+.fas.fa-star {
+	font-weight: 400;
+	color: gray;
+}
+
+.fas.fa-star:hover {
+	color: gold;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.fas.fa-star.filled {
+  color: gold;
+	font-weight: 900;
+}
+
+
+#currentName {
+	display: none;
+}
+
+
+
+
+
+/* ======== MEDIA QUERIES ========= */
+
+@media screen and (min-width: 576px) {
+
+	.nav-item,
+	.btn {
+		font-size: 14px;
+	}
+
+	.add-to-favorites {
+		border: none;
+		background-color: #fff;
+	}
+
+	/* .add-to-favorites:focus {
+		outline: none;
+	}
+
+	.fas.fa-star {
+		font-weight: 400;
+		color: gray;
+	}
+
+	.fas.fa-star:hover {
+		color: gold;
+		font-weight: 900;
+		cursor: pointer;
+	}
+
+	.fas.fa-star.filled {
+	  color: gold;
+		font-weight: 900;
+	}
+} */
+
+@media screen and (min-width: 768px) {
+	.submitRecipe {
+	  margin-left: 0;
+	  margin-right: 5px;
+	}
+
+  .modal-dialog {
+    max-width: 720px; /* New width for default modal */
+  }
+
+	.modal-favs {
+		max-width: 910px;
+	}
+
+  .modal-sm {
+    width: 350px; /* New width for small modal */
+  }
+}
+
+@media screen and (min-width: 992px) {
+	.recipe-ingredient {
+		padding-left: 1rem;
+		margin-top: 5px;
+	}
+
+	.modal-ingredients {
+		margin-top: 10px;
+	}
+
+	#currentName {
+		display: inline-block;
+	}
+}
