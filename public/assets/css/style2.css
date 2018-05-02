@@ -166,15 +166,6 @@ body {
 	background-color: #3345ab;
 }
 
-/* a.btn.btn-primary.btn-lg.modal-instructions {
-	background-color: #CB4E61;
-}
-
-a.btn.btn-primary.btn-lg.modal-instructions:hover {
-	background-color: #4453ab;
-	border-color: #4453ab;
-} */
-
 .add-to-favorites {
 	border: none;
 	background: #fff;
@@ -219,7 +210,7 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 
 /* ======== MEDIA QUERIES ========= */
 
-@media screen and (max-width: 575.9px) {
+@media screen and (max-width: 767.9px) {
 	.modal-body {
 		flex-wrap: wrap;
 		width: auto;
