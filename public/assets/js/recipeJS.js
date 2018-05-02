@@ -204,7 +204,11 @@ $(document).ready(function(){
 
     // Insert add to favorites star if not loading favorites...else add a remove button to remove recipe from favorites
     if (recipeData.favorite == undefined) {
-      $(".add-to-favorites").append("<i class='fas fa-star' data-id=" + recipeData.id + "></i>");
+      if (userStatus.id) {
+        $(".add-to-favorites").append("<i class='fas fa-star' data-id=" + recipeData.id + "></i>");
+      } else {
+        $(".add-to-favorites").append("<i class='fas fa-star disabled' data-id=" + recipeData.id + "></i>");
+      }
     } else {
       var removeBtn = $("<div><button type='button' class='btn btn-outline-secondary remove' data-id=" + recipeData.id + ">Remove</button></div>");
       $(".removeButton").html(removeBtn);
@@ -252,7 +256,8 @@ $(document).ready(function(){
 
 // ================ ADD TO FAVORITES ================
 
-  $(".add-to-favorites").on("click", ".fas", function(){
+$(".add-to-favorites").on("click", ".fas", function() {
+  if (userStatus.id) {
     $(this).toggleClass("filled");
     // CHANGED SOURCE FROM SOURCE.SOURCEURL
     var ingredientLinesJoin = recipe.ingredientLines.join();
@@ -271,7 +276,10 @@ $(document).ready(function(){
     $.post("api/recipe", searchObj, function(){
       console.log("data stored");
     })
-  })
+  } else {
+    return;
+  }
+})
 
 // ================ GET FAVORITES ================
 

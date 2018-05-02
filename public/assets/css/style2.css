@@ -177,6 +177,7 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 
 .add-to-favorites {
 	border: none;
+	background: #fff;
 }
 
 .add-to-favorites:focus {
@@ -199,6 +200,15 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 	font-weight: 900;
 }
 
+.fas.fa-star.disabled {
+	color: #777;
+	font-weight: 900;
+}
+
+.fas.fa-star.disabled:hover {
+	cursor: not-allowed;
+}
+
 
 #currentName {
 	display: none;
@@ -207,8 +217,18 @@ a.btn.btn-primary.btn-lg.modal-instructions:hover {
 
 
 
-
 /* ======== MEDIA QUERIES ========= */
+
+@media screen and (max-width: 575.9px) {
+	.modal-body {
+		flex-wrap: wrap;
+		width: auto;
+	}
+
+	.img-container {
+		margin-bottom: 15px;
+	}
+}
 
 @media screen and (min-width: 576px) {
 
