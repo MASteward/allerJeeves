@@ -1,5 +1,6 @@
 body {
 	background: url("../images/foodGroup.jpg");
+	background-attachment: fixed;
 	color: #CB4E61;
 	font-family: 'Catamaran', sans-serif;
 }
