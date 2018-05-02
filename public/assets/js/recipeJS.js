@@ -1,23 +1,7 @@
 
 var userStatus;
 
-function checkStatus() {
-  $.get("api/user_data").then(function(status) {
-    userStatus = status;
-    if (status.id !== undefined) {
-      console.log("Signed-In");
-      $("#loginBtn").toggle("disabled");
-      $("#currentName").append("Welcome ", status.firstName);
-    } else {
-      console.log("Not Signed-In");
-      $("#signOut").toggle("disabled");
-      $(".fav-link").css("display", "none");
-      $(".add-to-favorites").toggleClass("disabled");
-    }
-  });
-}
 
-checkStatus();
 
 var indexNumber;
 var recipe;
@@ -27,7 +11,25 @@ var cardInfo = [];
 var searchObj = [];
 var homeLogin = false;
 
-$(document).ready(function(){
+$(document).ready(function() {
+
+  function checkStatus() {
+    $.get("api/user_data").then(function(status) {
+      userStatus = status;
+      if (status.id !== undefined) {
+        console.log("Signed-In");
+        $("#loginBtn").toggle("disabled");
+        $("#currentName").append("Welcome ", status.firstName);
+      } else {
+        console.log("Not Signed-In");
+        $("#signOut").toggle("disabled");
+        $(".fav-link").css("display", "none");
+        $(".add-to-favorites").toggleClass("disabled");
+      }
+    });
+  }
+
+  checkStatus();
   // GRAB DATA FROM LOCAL STORAGE FOR RECIPE REQUEST
   var recipeData = JSON.parse(localStorage.getItem("data"));
   if (recipeData == null){
@@ -257,6 +259,7 @@ $(document).ready(function(){
 // ================ ADD TO FAVORITES ================
 
 $(".add-to-favorites").on("click", ".fas", function() {
+
   if (userStatus.id) {
     $(this).toggleClass("filled");
     // CHANGED SOURCE FROM SOURCE.SOURCEURL
@@ -277,6 +280,8 @@ $(".add-to-favorites").on("click", ".fas", function() {
       console.log("data stored");
     })
   } else {
+    $(".d-inline-block").data("content", "Sign in to save favorites");
+    $(".d-inline-block").popover('toggle');
     return;
   }
 })
