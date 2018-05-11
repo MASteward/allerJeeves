@@ -19,10 +19,16 @@ module.exports = function(app) {
     })
   });
 
-  // app.put("/api/recipe/:id", function(req, res) {
-  //   db.Recipe.update();
-  //
-  // });
+  app.get("/api/user_recipes/", function(req, res) {
+    db.Recipe.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function(dbRecipe) {
+      console.log("favorite recipes");
+      res.json(dbRecipe);
+    });
+  });
 
   app.delete("/api/recipe/:id", function(req, res) {
     db.Recipe.destroy({

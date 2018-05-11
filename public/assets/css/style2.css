@@ -145,6 +145,19 @@ body {
 	margin-right: 10px;
 }
 
+.fav-modal-header {
+	text-align: center;
+	padding-bottom: 0;
+}
+
+.fav-footer.footer-modal {
+	position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 12px 0;
+  border-top: 1px solid #ddd;
+}
+
 
 
 
@@ -325,5 +338,13 @@ body {
 		display: inline-block;
 		font-size: 20px;
 		text-shadow: 1px 1.5px #DDD;
+	}
+
+	.modal-favorites-title {
+		font-weight: 600;
+	}
+
+	#favoritesModal {
+		max-height: 90%;
 	}
 }

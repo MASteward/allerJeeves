@@ -205,6 +205,7 @@ $(document).ready(function() {
     $(".modal-instructions").attr("href", recipeData.source);
 
     // Insert add to favorites star if not loading favorites...else add a remove button to remove recipe from favorites
+    console.log("RECIPE DATA", recipeData.favorite);
     if (recipeData.favorite == undefined) {
       if (userStatus.id) {
         $(".add-to-favorites").append("<i class='fas fa-star' data-id=" + recipeData.id + "></i>");
@@ -253,6 +254,7 @@ $(document).ready(function() {
     $(".modal-totalTime").empty();
     $(".modal-servings").empty();
     $(".add-to-favorites").empty();
+    $(".removeButton").empty()
     console.log("cleared");
   });
 
